@@ -28,4 +28,9 @@ public class ApplicationProviderController {
     public void LinkDb(@PathVariable Boolean can){
         isCanLinkDb = can;
     }
+//负载均衡测试demo
+    @GetMapping("/add")
+    public String addTest(Integer a, Integer b, HttpServletRequest request){
+        return "Form port:"+request.getServerPort()+",result:"+ a+b;
+    }
 }
